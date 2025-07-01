@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; 
+    overflow-y: hidden;
+    font-family: Nunito,sans-serif;
+}
+
+/* Video Background (fullscreen) */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Ensures it stays behind content */
+}
+.video-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(100, 100, 100, 0.35);
+    z-index: -1;
+}
+
+/* Container (centered) */
+.container {
+    min-width: 580px;
+    min-height: 304px;
+    color: rgb(0, 0, 0);
+    padding: 25px 50px;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    /* align-items: center; */
+   
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1; /* Ensures it stays above video & overlay */
+}
+.input-container{
+    position: relative;
+    top: 20px;
+}
+h1{
+    font-size: 35px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+}
+/* forms */
+.form{
+    width: 480px;
+}
+label{
+    font-weight: bold;
+    margin-left: 10px;
+}
+input{
+    width: 95%;
+    margin-bottom: 10px ;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background-color: #fff;
+    outline: none;
+    font-family: Nunito,sans-serif;
+}
+/* button */
+button{
+ width: 100%;
+ height: 40px;
+ border-radius: 20px;
+ margin-top: 15px ;
+ border: none;
+ text-transform: uppercase;
+ background-color: #006959;
+ color: white;
+ cursor: pointer;
+ outline: none;
+ margin-bottom: 20px;
+}
+
+button:hover{
+    filter: brightness(110%);
+}
+
+/* countdown */
+
+ul{
+    margin-left: -45px;
+}
+li{
+    display: inline-block;
+    font-size: 30px;
+    list-style-type: none;
+    padding: 10px;
+    text-transform: uppercase;
+
+}
+li span{
+    display: block;
+    font-size: 80px;
+    text-align: center;
+
+}
+/* .complete */
+.complete{
+    position: relative;
+    top:60px ;
+}
+
+.complete-title{
+    animation: complete 4s infinite;
+}
+
+@keyframes complete {
+    0%{
+        color: rgb(232, 16, 16);
+    }
+    25%{
+        color: rgb(228, 232, 16);
+    }
+    50%{
+        color: rgb(16, 232, 45);
+        transform: scale(1.5);
+    }
+    75%{
+        color: rgb(30, 16, 232);
+    }
+    100%{
+        color: rgb(196, 16, 232);
+    }
+}
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .container {
+        min-width: auto;
+        width: 90%;
+        min-height: 245px;
+        padding: 20px;
+    }
+}
